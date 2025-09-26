@@ -21,11 +21,28 @@ export default function RootLayout({
       <head>
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"></link>
       </head>
-      <body className={inter.className}>
-        <Header />
-        {children}
-        <Footer/>
-      </body>
+    
+       
+  <body className="relative text-white h-screen w-screen overflow-hidden">
+  {/* Background gradient covering full screen */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background:
+        "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(249, 115, 22, 0.25), transparent 70%), #000000",
+    }}
+  />
+
+  {/* Main content */}
+  <div className="relative z-10 min-h-screen flex flex-col">
+    
+    {children}
+    
+  </div>
+</body>
+
+
+
     </html>
   );
 }
