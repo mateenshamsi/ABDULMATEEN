@@ -1,10 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 html,
 body {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
+}
+
+* {
+  background-color:transparent;
+}
+body {
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(249, 115, 22, 0.25), transparent 70%) no-repeat, black;
+  background-size: 100% 60vh; /* Control gradient size - only covers top 60% of viewport */
 }

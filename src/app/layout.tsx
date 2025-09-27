@@ -23,10 +23,10 @@ export default function RootLayout({
       </head>
     
        
-  <body className="relative text-white h-screen w-screen overflow-hidden">
-  {/* Background gradient covering full screen */}
+  <body className="relative text-white h-full w-full ">
+  
   <div
-    className="absolute inset-0 z-0"
+    className="absolute inset-0 z-0 bg-black/50 backdrop-blur-sm"
     style={{
       background:
         "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(249, 115, 22, 0.25), transparent 70%), #000000",

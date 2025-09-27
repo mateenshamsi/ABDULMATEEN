@@ -41,32 +41,21 @@ export const DATA = {
     },
   },
 
-  // work: [
-  //   {
-  //     company: "devx",
-  //     href: "https://devxcommerce.com/",
-  //     badges: ["SDE-1"],
-  //     location: "Surat, Gujarat India",
-  //     title: "Software Development Engineer",
-  //     logoUrl: "/devx_logo.jpeg",
-  //     start: "November 2024",
-  //     end: "Present",
-  //     description:
-  //       "Built scalable, production-ready systems for both D2C brands and enterprise clients. My work focused on full-stack development with a strong emphasis on backend & cloud technologies. Designed and implemented cloud-native architectures using AWS services such as SAM, Lambda, API Gateway, and DynamoDB. I also contributed to AI-integrated features, internal tooling, and continuously improved development practices around testing, deployment automation, and observability.",
-  //   },
-  //   {
-  //     company: "devx",
-  //     href: "https://devxcommerce.com/",
-  //     badges: ["Junior SDE"],
-  //     location: "Surat, Gujarat India",
-  //     title: "Software Development Engineer",
-  //     logoUrl: "/devx_logo.jpeg",
-  //     start: "August 2024",
-  //     end: "November 2024",
-  //     description:
-  //       "Led development of full-stack projects with minimal supervision, delivering both internal tools and client-facing solutions. Built serverless APIs and data pipelines using AWS SAM, Lambda, DynamoDB, Python, and Node.js. Developed secure, production-ready systems for enterprise clients, including automated verification workflows. Created AI-driven PoCs for D2C brands, some of which evolved into live features. Worked with Next.js, GraphQL, and Strapi to build scalable, responsive frontend.",
-  //   },
-  // ],
+  work: [
+    {
+      company: "devx",
+      href: "https://devxcommerce.com/",
+      badges: ["SDE-1"],
+      location: "Surat, Gujarat India",
+      title: "Software Development Engineer",
+      companyLogo: "/images/DevxLogo.png",
+      start: "August 2024",
+      end: "February 2025",
+      description:
+        "Built scalable, production-ready systems for both D2C brands and enterprise clients. My work focused on full-stack development with a strong emphasis on backend & cloud technologies. Designed and implemented cloud-native architectures using AWS services such as SAM, Lambda, API Gateway, and DynamoDB. I also contributed to AI-integrated features, internal tooling, and continuously improved development practices around testing, deployment automation, and observability.",
+    },
+   
+  ],
   // certifications: [
   //   {
   //     title: "AWS Certified Cloud Practitioner",
