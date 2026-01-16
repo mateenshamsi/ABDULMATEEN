@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
+import Cat from "@/components/common/Cat";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,30 +20,46 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"></link>
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
       </head>
-    
-       
-  <body className="relative text-white h-full w-full ">
-  
-  <div
-    className="absolute inset-0 z-0 bg-black/50 backdrop-blur-sm"
-    style={{
-      background:
-        "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(249, 115, 22, 0.25), transparent 70%), #000000",
-    }}
-  />
 
-  {/* Main content */}
-  <div className="relative z-10 min-h-screen flex flex-col">
-    
-    {children}
-    
-  </div>
-</body>
+      <body className="relative min-h-screen w-full text-white overflow-hidden">
+        {/* Background container */}
+        <div className="absolute inset-0 z-0">
+          
+          {/* Crimson Depth (TOPMOST background idea, but still behind content) */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(125% 125% at 50% 10%, #000000 40%, #2b0707 100%)",
+            }}
+          />
 
+          {/* Glow layer */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(249, 115, 22, 0.25), transparent 70%)",
+            }}
+          />
 
+          {/* Dark overlay / blur */}
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+        </div>
 
+        {/* App content */}
+        <div className="relative z-10 min-h-screen flex flex-col">
+          <Cat/>
+          {children}
+        </div>
+      </body>
     </html>
   );
 }

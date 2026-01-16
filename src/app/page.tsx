@@ -3,10 +3,12 @@ import React from 'react'
 import GithubStreak from '@/components/GithubStreak'
 import Hero from '@/components/Hero'
 import WorkExperience from '@/components/WorkExperience'
+import Cat from '@/components/common/Cat'
 function page() {
   return (
     <div className='pb-10 min-h-screen'> {/* Add min-h-screen */}
       <Navbar/>
+      
       <Hero/>
       <WorkExperience/>
       
