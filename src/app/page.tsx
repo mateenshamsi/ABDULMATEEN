@@ -4,6 +4,7 @@ import GithubStreak from '@/components/GithubStreak'
 import Hero from '@/components/Hero'
 import WorkExperience from '@/components/WorkExperience'
 import Cat from '@/components/common/Cat'
+import Projects from '@/components/Projects'
 function page() {
   return (
     <div className='pb-10 min-h-screen'> {/* Add min-h-screen */}
@@ -13,6 +14,7 @@ function page() {
       <WorkExperience/>
       
       <GithubStreak username='mateenshamsi'/>
+      <Projects/>
     </div>
   )
 }
