@@ -78,115 +78,115 @@ export const DATA = {
   //       "Determine the correct types of AI/ML technologies to apply to specific use cases and know how to use AI, ML, and generative AI technologies responsibly.",
   //   },
   // ],
-  // projects: [
-  //   {
-  //     title: "Appgen",
-  //     href: "https://www.appgen-cli.com/",
-  //     description:
-  //       "A fast, flexible CLI tool to scaffold modern web app projects (Next.js, React, Express, Flask, and more) with optional TypeScript and Tailwind support, perfect for rapid prototyping and consistent project setup",
-  //     technologies: ["Python", "Rich", "Typer"],
-  //     links: [
-  //       {
-  //         type: "Website",
-  //         href: "https://www.appgen-cli.com/",
-  //         icon: <Icons.globe className="size-3" />,
-  //       },
-  //       {
-  //         type: "Source",
-  //         href: "https://github.com/ratishjain12/appgen",
-  //         icon: <Github className="size-3" />,
-  //       },
-  //     ],
-  //     image:
-  //       "https://res.cloudinary.com/ratishjaininc/image/upload/v1757696349/appgen-ss_v4fldm.png",
-  //     video:
-  //       "https://res.cloudinary.com/ratishjaininc/video/upload/v1757696514/appgen-1755346121329_plroew.mp4",
-  //   },
-  //   {
-  //     title: "LeetCode Helper",
-  //     href: "https://github.com/ratishjain12/lc-helper",
-  //     description:
-  //       "lc-helper is a browser extension designed to streamline and enhance the LeetCode problem-solving experience. It adds useful helper features and UI improvements to make practicing coding puzzles more efficient and user-friendly.",
-  //     technologies: ["Javascript", "Gemini"],
-  //     links: [
-  //       // {
-  //       //   type: "Website",
-  //       //   href: "https://www.appgen-cli.com/",
-  //       //   icon: <Icons.globe className="size-3" />,
-  //       // },
-  //       {
-  //         type: "Source",
-  //         href: "https://github.com/ratishjain12/lc-helper",
-  //         icon: <Github className="size-3" />,
-  //       },
-  //     ],
-  //     image:
-  //       "https://res.cloudinary.com/ratishjaininc/image/upload/v1757696349/appgen-ss_v4fldm.png",
-  //     video:
-  //       "https://res.cloudinary.com/ratishjaininc/video/upload/v1757697142/leetcode-helper-1755431637398_orc79n.mp4",
-  //   },
-  //   {
-  //     title: "Notely.ai",
-  //     href: "https://notely-ai.vercel.app/",
-  //     description:
-  //       "Transform your PDFs into interactive knowledge. Ask questions, get instant answers, and unlock insights with Notely.ai.",
-  //     technologies: [
-  //       "Next.js",
-  //       "Typescript",
-  //       "Convex DB",
-  //       "Langchain",
-  //       "Clerk",
-  //       "TailwindCSS",
-  //       "Stripe",
-  //       "Shadcn UI",
-  //     ],
-  //     links: [
-  //       {
-  //         type: "Website",
-  //         href: "https://www.notely-ai.ratishfolio.com/",
-  //         icon: <Icons.globe className="size-3" />,
-  //       },
-  //       {
-  //         type: "Source",
-  //         href: "https://github.com/ratishjain12/Notely.ai",
-  //         icon: <Github className="size-3" />,
-  //       },
-  //     ],
-  //     image:
-  //       "https://res.cloudinary.com/ratishjaininc/image/upload/v1732793719/samples/people/notely.ai_gnat8v.png",
-  //     video: null,
-  //   },
-  //   {
-  //     title: "Coldmail.io",
-  //     href: "https://coldmail-io.vercel.app/",
-  //     dates: "Jan 2024 - Feb 2024",
-  //     description:
-  //       "Generate highly personalized email templates for your cold outreach campaigns. Save, copy, and send your emails directly from our app, with options to edit and delete—all in one place.",
-  //     technologies: [
-  //       "Next.js",
-  //       "Typescript",
-  //       "Mongo DB",
-  //       "Better Auth",
-  //       "TailwindCSS",
-  //       "Razorpay Payment",
-  //       "Shadcn UI",
-  //       "Groq AI",
-  //     ],
-  //     links: [
-  //       {
-  //         type: "Website",
-  //         href: "https://coldmail-io.vercel.app/",
-  //         icon: <Icons.globe className="size-3" />,
-  //       },
-  //       {
-  //         type: "Source",
-  //         href: "https://github.com/ratishjain12/coldmail.io",
-  //         icon: <Github className="size-3" />,
-  //       },
-  //     ],
-  //     image:
-  //       "https://res.cloudinary.com/ratishjaininc/image/upload/v1732793719/samples/people/coldmail_ivzkkf.png",
-  //     video: null,
-  //   },
-  // ],
+  projects: [
+    {
+      title: "Appgen",
+      href: "https://www.appgen-cli.com/",
+      description:
+        "A fast, flexible CLI tool to scaffold modern web app projects (Next.js, React, Express, Flask, and more) with optional TypeScript and Tailwind support, perfect for rapid prototyping and consistent project setup",
+      technologies: ["Python", "Rich", "Typer"],
+      links: [
+        {
+          type: "Website",
+          href: "https://www.appgen-cli.com/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/ratishjain12/appgen",
+          icon: <Github className="size-3" />,
+        },
+      ],
+      image:
+        "https://res.cloudinary.com/ratishjaininc/image/upload/v1757696349/appgen-ss_v4fldm.png",
+      video:
+        "https://res.cloudinary.com/ratishjaininc/video/upload/v1757696514/appgen-1755346121329_plroew.mp4",
+    },
+    {
+      title: "LeetCode Helper",
+      href: "https://github.com/ratishjain12/lc-helper",
+      description:
+        "lc-helper is a browser extension designed to streamline and enhance the LeetCode problem-solving experience. It adds useful helper features and UI improvements to make practicing coding puzzles more efficient and user-friendly.",
+      technologies: ["Javascript", "Gemini"],
+      links: [
+        // {
+        //   type: "Website",
+        //   href: "https://www.appgen-cli.com/",
+        //   icon: <Icons.globe className="size-3" />,
+        // },
+        {
+          type: "Source",
+          href: "https://github.com/ratishjain12/lc-helper",
+          icon: <Github className="size-3" />,
+        },
+      ],
+      image:
+        "https://res.cloudinary.com/ratishjaininc/image/upload/v1757696349/appgen-ss_v4fldm.png",
+      video:
+        "https://res.cloudinary.com/ratishjaininc/video/upload/v1757697142/leetcode-helper-1755431637398_orc79n.mp4",
+    },
+    {
+      title: "Notely.ai",
+      href: "https://notely-ai.vercel.app/",
+      description:
+        "Transform your PDFs into interactive knowledge. Ask questions, get instant answers, and unlock insights with Notely.ai.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "Convex DB",
+        "Langchain",
+        "Clerk",
+        "TailwindCSS",
+        "Stripe",
+        "Shadcn UI",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://www.notely-ai.ratishfolio.com/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/ratishjain12/Notely.ai",
+          icon: <Github className="size-3" />,
+        },
+      ],
+      image:
+        "https://res.cloudinary.com/ratishjaininc/image/upload/v1732793719/samples/people/notely.ai_gnat8v.png",
+      video: null,
+    },
+    {
+      title: "Coldmail.io",
+      href: "https://coldmail-io.vercel.app/",
+      dates: "Jan 2024 - Feb 2024",
+      description:
+        "Generate highly personalized email templates for your cold outreach campaigns. Save, copy, and send your emails directly from our app, with options to edit and delete—all in one place.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "Mongo DB",
+        "Better Auth",
+        "TailwindCSS",
+        "Razorpay Payment",
+        "Shadcn UI",
+        "Groq AI",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://coldmail-io.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/ratishjain12/coldmail.io",
+          icon: <Github className="size-3" />,
+        },
+      ],
+      image:
+        "https://res.cloudinary.com/ratishjaininc/image/upload/v1732793719/samples/people/coldmail_ivzkkf.png",
+      video: null,
+    },
+  ],
 } as const;

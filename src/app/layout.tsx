@@ -28,7 +28,7 @@ export default function RootLayout({
         />
       </head>
 
-      <body className="relative min-h-screen w-full text-white overflow-hidden">
+      <body className="relative min-h-screen w-full text-white">
         {/* Background container */}
         <div className="absolute inset-0 z-0">
           
