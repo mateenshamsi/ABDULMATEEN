@@ -1,5 +1,8 @@
+import { ShineBorder } from "../ui/shine-border";
 import { BlurFade } from "../ui/blur-fade";
-import { Link as LinkIcon, PlayCircle } from "lucide-react";
+import { Link as LinkIcon, PlayCircle, Github, ArrowRight } from "lucide-react";
+
+const Website = LinkIcon;
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
@@ -8,17 +11,24 @@ import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, Di
 import { Card,CardHeader,CardContent,CardDescription,CardFooter,CardTitle
  } from "../ui/card"
 import { useState } from "react";
+import { Tooltip, TooltipContent } from "../ui/tooltip";
+import { TooltipTrigger } from "@radix-ui/react-tooltip";
+
+const BLUR_FADE_DELAY = 0.04;
 
 interface ProjectCardProps {
   title: string;
   description: string;
-  technologies: string[];
+  technologies: readonly { name: string; icon?: React.ComponentType<React.SVGProps<SVGSVGElement>> | null; }[];
   links: { type: string; href: string; icon: React.ReactNode }[];
-  image?: string;
+  image: string;
   video?: string | null;
   href?: string;
+  github?: string;
+  details?: boolean;
+  isWorking?: boolean;
+  projectDetailsPageSlug?: string;
 }
-
 const ProjectCard = ({
   title,
   description,
@@ -27,104 +37,151 @@ const ProjectCard = ({
   image,
   video,
   href,
- 
+  github,
+  details,
+  isWorking,
+  projectDetailsPageSlug,
 }: ProjectCardProps) => {
-  const [showVideo, setShowVideo] = useState(false);
+  const [dialogOpen, setDialogOpen] = useState<boolean>(false);
 
   return (
-    // <BlurFade delay={BLUR_FADE_DELAY * index}>
-      <Card className="flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full">
-        <Dialog>
-          <DialogTrigger asChild>
-            <div className="relative w-full h-48 flex-shrink-0">
-              {image && !showVideo && (
-                <Image
-                  src={image}
-                  alt={title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="object-top"
-                />
-              )}
-              {video && showVideo && (
+    <ShineBorder borderRadius={8} className="h-full w-full" color={["rgba(249, 115, 22, 0.5)", "#2b0707", "#000000"]}>
+      <Card className="group h-full w-full overflow-hidden border-gray-100 p-0 shadow-none transition-all dark:border-gray-800">
+    <CardHeader className="p-0">
+      <div className="group relative aspect-video overflow-hidden">
+        <Image
+          className="h-full w-full object-cover"
+          src={image}
+          alt={title}
+          width={1920}
+          height={1080}
+        />
+        {video && (
+          <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+            <DialogTrigger asChild>
+              <div className="absolute inset-0 flex cursor-pointer items-center justify-center bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100 hover:backdrop-blur-xs">
+                <button className="flex size-16 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition-colors duration-200 group-hover:cursor-pointer hover:bg-white/30">
+                  <PlayCircle />
+                </button>
+              </div>
+            </DialogTrigger>
+            <DialogContent className="w-full max-w-4xl border-0 p-0">
+              <div className="aspect-video w-full">
                 <video
+                  className="h-full w-full rounded-lg object-cover"
                   src={video}
                   autoPlay
                   loop
-                  muted
-                  playsInline
-                  className="absolute inset-0 w-full h-full object-cover object-top"
+                  controls
                 />
-              )}
-              {video && !showVideo && (
-                <button
-                  className="absolute inset-0 flex items-center justify-center bg-black/50 text-white transition-opacity duration-300 opacity-0 hover:opacity-100"
-                  onClick={() => setShowVideo(true)}
-                >
-                  <PlayCircle className="h-16 w-16" />
-                </button>
-              )}
-            </div>
-          </DialogTrigger>
-          <DialogContent className="sm:max-w-[425px]">
-            <DialogHeader>
-              <DialogTitle>{title}</DialogTitle>
-              <DialogDescription>{description}</DialogDescription>
-            </DialogHeader>
-            <div className="grid gap-4 py-4">
-              {technologies.map((tech) => (
-                <Badge key={tech}>{tech}</Badge>
-              ))}
-            </div>
-            <DialogFooter>
-              <DialogClose asChild>
-                <Button type="button" variant="secondary">
-                  Close
-                </Button>
-              </DialogClose>
-              {links.map((link) => (
-                <Button key={link.href} asChild>
-                  <Link href={link.href} target="_blank">
-                    {link.type}
-                  </Link>
-                </Button>
-              ))}
-            </DialogFooter>
-          </DialogContent>
-        </Dialog>
+              </div>
+              <DialogTitle className="sr-only">{title}</DialogTitle>
+            </DialogContent>
+          </Dialog>
+        )}
+      </div>
+    </CardHeader>
 
-        <CardHeader>
-          <CardTitle className="text-lg line-clamp-1">
-            {href ? (
-              <Link href={href} target="_blank" className="hover:underline">
-                {title}
-              </Link>
-            ) : (
-              title
-            )}
-          </CardTitle>
-          <CardDescription className="line-clamp-2">
-            {description}
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="mt-auto flex flex-wrap gap-2">
-          {technologies.map((tech) => (
-            <Badge key={tech} variant="secondary">
-              {tech}
-            </Badge>
-          ))}
-        </CardContent>
-        <CardFooter className="flex justify-end gap-2">
-          {links.map((link) => (
-            <Button key={link.href} asChild size="sm" variant="ghost">
-              <Link href={link.href} target="_blank">
-                <span className="sr-only">Link to {link.type}</span>
-                {link.icon}
-              </Link>
-            </Button>
-          ))}
-        </CardFooter>
-      </Card>
+    <CardContent className="px-6">
+      <div className="space-y-4">
+        {/* Project Header - Title and Icons */}
+        <div className="flex items-center justify-between gap-4">
+          <Link href={links[0]?.href}>
+            <h3 className="group-hover:text-primary text-xl leading-tight font-semibold hover:cursor-pointer">
+              {title}
+            </h3>
+          </Link>
+          <div className="flex items-center gap-2">
+            <Tooltip>
+              <TooltipTrigger>
+                <Link
+                  className="text-secondary hover:text-primary flex size-6 items-center justify-center transition-colors"
+                  href={links[0].href}
+                  target="_blank"
+                >
+                  <Website />
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>View Website</p>
+              </TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger>
+                {github && (
+                  <Link
+                    className="text-secondary hover:text-primary flex size-6 items-center justify-center transition-colors"
+                    href={github}
+                    target="_blank"
+                  >
+                    <Github />
+                  </Link>
+                )}
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>View GitHub</p>
+              </TooltipContent>
+            </Tooltip>
+          </div>
+        </div>
+
+        {/* Description */}
+        <p className="text-secondary line-clamp-3">{description}</p>
+
+        {/* Technologies */}
+        <div>
+          <h4 className="text-secondary mb-2 text-sm font-medium">
+            Technologies
+          </h4>
+          <div className="flex flex-wrap gap-2">
+            {technologies.map((technology, index) => (
+              <Tooltip key={index}>
+                <TooltipTrigger>
+                  <div className="size-6 transition-all duration-300 hover:scale-120 hover:cursor-pointer">
+                    {technology.icon}
+                  </div>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{technology.name}</p>
+                </TooltipContent>
+              </Tooltip>
+            ))}
+          </div>
+        </div>
+      </div>
+    </CardContent>
+
+    {details && (
+      <CardFooter className="flex justify-between p-6 pt-0">
+        <div
+          className={`flex items-center gap-1 rounded-md px-2 py-1 text-xs ${
+            isWorking
+              ? 'border-green-300 bg-green-500/10'
+              : 'border-red-300 bg-red-500/10'
+          }`}
+        >
+          {isWorking ? (
+            <>
+              <div className="size-2 animate-pulse rounded-full bg-green-500" />
+              All Systems Operational
+            </>
+          ) : (
+            <>
+              <div className="size-2 animate-pulse rounded-full bg-red-500" />
+              Building
+            </>
+          )}
+        </div>
+        <Link
+          href={projectDetailsPageSlug}
+          className="text-secondary hover:text-primary flex items-center gap-2 text-sm underline-offset-4 transition-colors hover:underline"
+        >
+          View Details <ArrowRight className="size-4" />
+        </Link>
+      </CardFooter>
+    )}
+  </Card>
+    </ShineBorder>
     // </BlurFade>
   );
 };

@@ -33,6 +33,9 @@ export default function Projects() {
                 links={project.links}
                 image={project.image}
                 video={project.video}
+                github={project.links.find(link => link.type === "Source")?.href}
+               
+                projectDetailsPageSlug={project.projectDetailsPageSlug}
               />
             ))}
           </div>

@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import Cat from "@/components/common/Cat";
-
+import { ScrollProgress } from "@/components/ui/scroll-progress"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -16,7 +16,8 @@ export const metadata: Metadata = {
 // .bg-dark { background-color: #0a0a0a; }
 // .bg-brown { background-color: #2d1810; } /* or your preferred brown */
 
-import ReactLenis  from 'lenis/react'
+import { ReactLenis } from 'lenis/react'
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 export default function RootLayout({
   children,
@@ -54,13 +55,14 @@ export default function RootLayout({
       `,
     }}
   />
-
-  
     {/* App content */}
-    <div className="relative z-10 min-h-screen flex flex-col">
-      <Cat />
-      {children}
-    </div>
+    <TooltipProvider>
+    <ScrollProgress variant={"sunset"} showPercentage className="fixed bottom-0 left-0 w-full z-50" />
+      <div className="relative z-10 min-h-screen flex flex-col">
+        <Cat />
+        {children}
+      </div>
+    </TooltipProvider>
   </ReactLenis>
 </body>
 
